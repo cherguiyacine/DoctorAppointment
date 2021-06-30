@@ -1,5 +1,6 @@
 package com.example.doctorappointment.Data.api
 
+import com.example.doctorappointment.utils.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -9,7 +10,6 @@ import java.util.concurrent.TimeUnit
 object ServiceBuilder {
 
     // the Base adresse
-    private const val BASE_URL = "http://autolib-dz.herokuapp.com/"
 
     val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
