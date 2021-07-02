@@ -4,7 +4,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.doctorappointment.Data.model.Doctor
-import retrofit2.Converter
+import com.example.doctorappointment.utils.Converter
+
 
 @Database(entities = arrayOf(Doctor::class), version = 1)
 @TypeConverters(Converter::class)

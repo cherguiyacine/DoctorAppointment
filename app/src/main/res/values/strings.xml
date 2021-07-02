@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">DoctorAppointment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="signIn">Conexion</string>
+    <string name="welcomeMssg1">Bienvenue !</string>
+    <string name="welcomeMssg2">Connectez-vous pour continuer</string>
+    <string name="phoneNumber">Numéro de téléphone</string>
+    <string name="password">Mot de passe</string>
+    <string name="logIn">Se connecter</string>
+    <string name="forgetPassword">Mot de passe oublié ?</string>
+    <string name="rememberMe">Se souvenir de moi</string>
+    <string name="currentLocation">Emplacement actuel</string>
+    <string name="city">Oran</string>
+    <string name="FindYourDesired">Trouvez votre médecin</string>
+    <string name="DoctorRightNow">En quelques clics !</string>
+    <string name="search">Recherche</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

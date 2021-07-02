@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_input_background_white">
+
+    <ImageView
+        android:id="@+id/photoDoctor"
+        android:layout_width="64dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/photo" />
+
+    <TextView
+        android:id="@+id/nameDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Dr. Jenny Roy"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/photoDoctor"
+        app:layout_constraintTop_toTopOf="@+id/photoDoctor" />
+
+    <TextView
+        android:id="@+id/specialiteDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Dentiste"
+        android:textColor="@color/grey"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/nameDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/nameDoctor" />
+
+    <ImageView
+        android:id="@+id/numberPhoneDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nameDoctor"
+        app:srcCompat="@drawable/ic_phonecalldoctor" />
+
+    <ImageView
+        android:id="@+id/direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/numberPhoneDoctor"
+        app:layout_constraintTop_toTopOf="@+id/numberPhoneDoctor"
+        app:srcCompat="@drawable/ic_mappindoctor" />
+
+    <View
+        android:id="@+id/showProfilDoctor"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_input_background_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/numberPhoneDoctor"
+        app:layout_constraintStart_toStartOf="@+id/direction"
+        app:layout_constraintTop_toBottomOf="@+id/numberPhoneDoctor" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voir profil"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/showProfilDoctor"
+        app:layout_constraintEnd_toEndOf="@+id/showProfilDoctor"
+        app:layout_constraintStart_toStartOf="@+id/showProfilDoctor"
+        app:layout_constraintTop_toTopOf="@+id/showProfilDoctor" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="07985526"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toStartOf="@+id/specialiteDoctor"
+        app:layout_constraintTop_toBottomOf="@+id/specialiteDoctor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
