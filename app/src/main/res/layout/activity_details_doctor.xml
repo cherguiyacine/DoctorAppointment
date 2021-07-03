@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3C8C9EFF"
+    tools:context=".ui.view.activity.patient.DetailsDoctorActivity">
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_undraw_medicine_b1ol" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_input_background_home_page_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/photoDoctorReservation"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:civ_border_color="@color/purple_basic"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="@+id/textView19"
+        app:layout_constraintTop_toTopOf="@+id/nomDocteur" />
+
+    <TextView
+        android:id="@+id/nomDocteur"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="40dp"
+        android:text="Dr. Chergui Yacine"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView19"
+        app:layout_constraintStart_toEndOf="@+id/photoDoctorReservation"
+        app:layout_constraintTop_toTopOf="@+id/view5" />
+
+    <View
+        android:id="@+id/numberPhoneDoctorDetails"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="#EDF1FA"
+        app:layout_constraintStart_toStartOf="@+id/nomDocteur"
+        app:layout_constraintTop_toBottomOf="@+id/nomDocteur" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="45dp"
+        android:layout_height="20dp"
+        android:text="Appeler"
+        android:textColor="#4B7FFB"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/numberPhoneDoctorDetails"
+        app:layout_constraintEnd_toEndOf="@+id/numberPhoneDoctorDetails"
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/numberPhoneDoctorDetails" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/numberPhoneDoctorDetails"
+        app:layout_constraintStart_toStartOf="@+id/numberPhoneDoctorDetails"
+        app:layout_constraintTop_toTopOf="@+id/numberPhoneDoctorDetails"
+        app:srcCompat="@drawable/ic_baseline_local_phone_24" />
+
+    <View
+        android:id="@+id/directionDetails"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="#FAF2EA"
+        app:layout_constraintStart_toEndOf="@+id/numberPhoneDoctorDetails"
+        app:layout_constraintTop_toTopOf="@+id/numberPhoneDoctorDetails" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voir map"
+        android:textColor="#F57E71"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/directionDetails"
+        app:layout_constraintEnd_toEndOf="@+id/directionDetails"
+        app:layout_constraintStart_toEndOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/directionDetails" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/directionDetails"
+        app:layout_constraintStart_toStartOf="@+id/directionDetails"
+        app:layout_constraintTop_toTopOf="@+id/directionDetails"
+        app:srcCompat="@drawable/ic_locationicon_color" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="A propos"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/photoDoctorReservation" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="@+id/textView19"
+        app:layout_constraintStart_toStartOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/textView19">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dr. Stella is the top most heart surgeon in Flower  Hospital. She has done over 100 successful sugeries  within past 3 years. She has achieved several awards for her wonderful contribution in her own  field. She’s available for private consultation for given schedules." />
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/booking"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/ic_input_background"
+        android:text="Rendez-vous"
+        android:textStyle="bold"
+        app:backgroundTint="@color/purple_basic"
+        app:layout_constraintEnd_toEndOf="@+id/nestedScrollView"
+        app:layout_constraintStart_toStartOf="@+id/nestedScrollView"
+        app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" />
+
+    <Button
+        android:id="@+id/conseilDemande"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/ic_input_background"
+        android:text="Demande Conseil"
+        android:textStyle="bold"
+        app:backgroundTint="@color/purple_basic"
+        app:layout_constraintEnd_toEndOf="@+id/nestedScrollView"
+        app:layout_constraintStart_toStartOf="@+id/nestedScrollView"
+        app:layout_constraintTop_toBottomOf="@+id/booking" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

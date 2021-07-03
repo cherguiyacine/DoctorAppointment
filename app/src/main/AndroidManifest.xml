@@ -9,15 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DoctorAppointment">
-        <activity android:name=".ui.view.activity.patient.HomeActivity">   <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".ui.view.activity.docteur.HomeDoctorActivity"></activity>
+        <activity android:name=".ui.view.activity.patient.AppoitmentsActivity" />
+        <activity android:name=".ui.view.activity.patient.DetailsDoctorActivity" />
+        <activity android:name=".ui.view.activity.patient.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".ui.view.activity.login.LoginActivity">
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ui.view.activity.login.LoginActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

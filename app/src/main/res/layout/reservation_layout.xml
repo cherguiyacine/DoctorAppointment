@@ -6,9 +6,8 @@
     android:layout_height="wrap_content"
     android:background="@drawable/ic_input_background_white">
 
-
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/photoDoctor"
+        android:id="@+id/photoDoctorReservation"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="12dp"
@@ -20,43 +19,43 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nameDoctor"
+        android:id="@+id/nameDoctorReservation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:text="Dr. Jenny Roy"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/numberPhoneDoctor"
-        app:layout_constraintStart_toEndOf="@+id/photoDoctor"
-        app:layout_constraintTop_toTopOf="@+id/photoDoctor" />
+        app:layout_constraintEnd_toStartOf="@+id/numberPhoneDoctorReservation"
+        app:layout_constraintStart_toEndOf="@+id/photoDoctorReservation"
+        app:layout_constraintTop_toTopOf="@+id/photoDoctorReservation" />
 
     <TextView
-        android:id="@+id/specialiteDoctor"
+        android:id="@+id/specialiteDoctorReservation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:text="Dentiste"
         android:textColor="@color/grey"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/nameDoctor"
-        app:layout_constraintStart_toStartOf="@+id/nameDoctor"
-        app:layout_constraintTop_toBottomOf="@+id/nameDoctor" />
+        app:layout_constraintEnd_toEndOf="@+id/nameDoctorReservation"
+        app:layout_constraintStart_toStartOf="@+id/nameDoctorReservation"
+        app:layout_constraintTop_toBottomOf="@+id/nameDoctorReservation" />
 
     <View
-        android:id="@+id/direction"
+        android:id="@+id/directionReservation"
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:layout_marginTop="10dp"
         android:background="#FAF2EA"
-        app:layout_constraintEnd_toEndOf="@+id/numberPhoneDoctor"
-        app:layout_constraintTop_toBottomOf="@+id/numberPhoneDoctor" />
+        app:layout_constraintEnd_toEndOf="@+id/numberPhoneDoctorReservation"
+        app:layout_constraintTop_toBottomOf="@+id/numberPhoneDoctorReservation" />
 
     <View
-        android:id="@+id/numberPhoneDoctor"
+        android:id="@+id/numberPhoneDoctorReservation"
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:layout_marginTop="12dp"
@@ -67,16 +66,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/numberPhoneDoctorText"
+        android:id="@+id/numberPhoneDoctorTextReservation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="18dp"
         android:text="07985526"
         android:textColor="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/specialiteDoctor"
-        app:layout_constraintTop_toBottomOf="@+id/specialiteDoctor" />
+        app:layout_constraintStart_toStartOf="@+id/specialiteDoctorReservation"
+        app:layout_constraintTop_toBottomOf="@+id/specialiteDoctorReservation" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -86,9 +83,9 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/direction"
-        app:layout_constraintStart_toStartOf="@+id/direction"
-        app:layout_constraintTop_toTopOf="@+id/direction"
+        app:layout_constraintBottom_toBottomOf="@+id/directionReservation"
+        app:layout_constraintStart_toStartOf="@+id/directionReservation"
+        app:layout_constraintTop_toTopOf="@+id/directionReservation"
         app:layout_constraintVertical_bias="0.272"
         app:srcCompat="@drawable/ic_locationicon_color" />
 
@@ -100,10 +97,10 @@
         android:textColor="#F57E71"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/direction"
-        app:layout_constraintEnd_toEndOf="@+id/direction"
+        app:layout_constraintBottom_toBottomOf="@+id/directionReservation"
+        app:layout_constraintEnd_toEndOf="@+id/directionReservation"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/direction" />
+        app:layout_constraintTop_toTopOf="@+id/directionReservation" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -113,9 +110,9 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/numberPhoneDoctor"
-        app:layout_constraintStart_toStartOf="@+id/numberPhoneDoctor"
-        app:layout_constraintTop_toTopOf="@+id/numberPhoneDoctor"
+        app:layout_constraintBottom_toBottomOf="@+id/numberPhoneDoctorReservation"
+        app:layout_constraintStart_toStartOf="@+id/numberPhoneDoctorReservation"
+        app:layout_constraintTop_toTopOf="@+id/numberPhoneDoctorReservation"
         app:srcCompat="@drawable/ic_baseline_local_phone_24" />
 
     <TextView
@@ -126,9 +123,24 @@
         android:textColor="#4B7FFB"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/numberPhoneDoctor"
-        app:layout_constraintEnd_toEndOf="@+id/numberPhoneDoctor"
+        app:layout_constraintBottom_toBottomOf="@+id/numberPhoneDoctorReservation"
+        app:layout_constraintEnd_toEndOf="@+id/numberPhoneDoctorReservation"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/numberPhoneDoctor" />
+        app:layout_constraintTop_toTopOf="@+id/numberPhoneDoctorReservation" />
 
+    <ImageView
+        android:id="@+id/qrCodeImageReservation"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberPhoneDoctorTextReservation"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
