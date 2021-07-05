@@ -55,4 +55,26 @@
         app:layout_constraintTop_toTopOf="@+id/view"
         app:srcCompat="@drawable/ic_alert" />
 
+    <TextView
+        android:id="@+id/emptyNoReservation"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
+        android:gravity="center"
+        android:text="Pas de reservation disponible"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/fragment2"
+        app:layout_constraintStart_toStartOf="@+id/fragment2"
+        app:layout_constraintTop_toTopOf="@+id/fragment2" />
+
+    <ProgressBar
+        android:id="@+id/progressBarReservation"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/fragment2"
+        app:layout_constraintStart_toStartOf="@+id/fragment2"
+        app:layout_constraintTop_toTopOf="@+id/fragment2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

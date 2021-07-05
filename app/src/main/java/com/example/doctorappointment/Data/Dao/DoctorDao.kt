@@ -20,4 +20,7 @@ interface DoctorDao {
 
     @Query("select * from Doctor")
     fun getAllDoctor():List<Doctor>
+
+    @Query("DELETE FROM Doctor")
+    fun deleteAllDoctor()
 }

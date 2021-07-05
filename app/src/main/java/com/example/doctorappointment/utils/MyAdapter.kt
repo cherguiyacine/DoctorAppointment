@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctorappointment.Data.model.Doctor
-import com.example.doctorappointment.Data.model.Reservation
 import com.example.doctorappointment.R
 import com.example.doctorappointment.ui.view.activity.patient.DetailsDoctorActivity
 import de.hdodenhof.circleimageview.CircleImageView
@@ -67,7 +66,7 @@ class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val numberPhoneDoctorText = view.findViewById<TextView>(R.id.numberPhoneDoctorText) as TextView
     val numberPhoneDoctor = view.findViewById<TextView>(R.id.numberPhoneDoctor) as View
     val specialiteDoctor = view.findViewById<TextView>(R.id.specialiteDoctor) as TextView
-    var photoDoctor: CircleImageView = view.findViewById(R.id.photoDoctor)
+    var photoDoctor: CircleImageView = view.findViewById(R.id.photoDoctorTraitement)
     val direction = view.findViewById<TextView>(R.id.direction) as View
 
 }

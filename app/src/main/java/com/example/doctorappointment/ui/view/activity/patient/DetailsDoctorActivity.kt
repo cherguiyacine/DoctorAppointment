@@ -1,14 +1,20 @@
 package com.example.doctorappointment.ui.view.activity.patient
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.contentValuesOf
 import com.example.doctorappointment.Data.model.Doctor
 import com.example.doctorappointment.Data.model.Reservation
+import com.example.doctorappointment.Data.model.resquest.ReservationBody
+import com.example.doctorappointment.Data.repositories.LoginRepo
+import com.example.doctorappointment.Data.repositories.PatientRepo
+import com.example.doctorappointment.Data.room.RoomService.context
 import com.example.doctorappointment.R
-import com.example.doctorappointment.utils.listDoctors
+import com.example.doctorappointment.utils.currentPatient
 import com.example.doctorappointment.utils.listReservation
 import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment
 import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment.OnButtonClickListener
@@ -34,7 +40,7 @@ class DetailsDoctorActivity : AppCompatActivity() {
         photoDoctorReservation.setImageResource(R.drawable.doctor)
 
         conseilDemande.setOnClickListener {
-            val dialog = BookingAlertFragment()
+            val dialog = BookingAlertFragment(person.doctorID)
             dialog.show(supportFragmentManager, "customDialog1")
         }
         numberPhoneDoctorDetails.setOnClickListener {
@@ -59,7 +65,7 @@ class DetailsDoctorActivity : AppCompatActivity() {
                 "Confirmer",
                 "Retour"
             )
-// Assign values
+             // Assign values
             dateTimeDialogFragment.startAtCalendarView()
             dateTimeDialogFragment.set24HoursMode(true)
             println(year.toInt())
@@ -91,8 +97,16 @@ class DetailsDoctorActivity : AppCompatActivity() {
             dateTimeDialogFragment.setOnButtonClickListener(object : OnButtonClickListener {
                 override fun onPositiveButtonClick(date: Date?) {
                     if (date !=null){
-                        var res =Reservation(0,person,person,date)
-                        listReservation.add(res)
+                        val pref = context.getSharedPreferences(
+                            "bdd", Context.MODE_PRIVATE
+                        )
+                        val patientId = pref.getInt(
+                            "patientId", 0
+                        )
+                        var res = ReservationBody( patientId,person.doctorID,date)
+                        var detailsDoctorActivity = PatientRepo.Companion
+                        detailsDoctorActivity.sendReservation(context,res)
+                      //  listReservation.add(res)
 
                     }else{
                         Toast.makeText(applicationContext, "Un problem avec la date est produit", Toast.LENGTH_LONG)

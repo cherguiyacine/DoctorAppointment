@@ -14,9 +14,7 @@ data class Doctor(
     val imgUrl: String,
     val numTlp: String,
     val longitude: Float,
-    val latitude: Float,
-    val url: String,
-    val exp: Int,
+    val latitude: Float
 ) : Serializable
 
 

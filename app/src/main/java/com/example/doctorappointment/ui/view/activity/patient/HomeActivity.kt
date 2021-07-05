@@ -1,48 +1,56 @@
 package com.example.doctorappointment.ui.view.activity.patient
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.doctorappointment.Data.model.Doctor
-import com.example.doctorappointment.Data.model.Reservation
+import androidx.core.content.edit
+import com.example.doctorappointment.Data.repositories.DoctorRepo
 import com.example.doctorappointment.R
-import com.example.doctorappointment.utils.MyAdapter
-import com.example.doctorappointment.utils.SpacingItemDecorator
-import com.example.doctorappointment.utils.listDoctors
-import com.example.doctorappointment.utils.listReservation
+import com.example.doctorappointment.ui.view.activity.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_list_doctors.*
-import kotlinx.android.synthetic.main.fragment_list_reservation.*
-import java.util.*
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        loadData()
-         var spacingBetweenItem: SpacingItemDecorator =SpacingItemDecorator(40)
+        var homePatientActivity = DoctorRepo.Companion
+        homePatientActivity.getAllDoctors(this,recyclerView,emtyDoctorMessge,progressBarDoctors)
+        val pref = getSharedPreferences(
+            "bdd", Context.MODE_PRIVATE
+        )
+        recyclerView.setVisibility(View.GONE);
+        emtyDoctorMessge.setVisibility(View.GONE);
+       /*  var spacingBetweenItem: SpacingItemDecorator =SpacingItemDecorator(40)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.addItemDecoration(spacingBetweenItem)
         recyclerView.adapter = MyAdapter(
             this, listDoctors
-        )
-        if (listDoctors.isEmpty()) {
-            recyclerView.setVisibility(View.GONE);
-            emtyDoctorMessg.setVisibility(View.VISIBLE);
+        )*/
+        logoutPatient.setOnClickListener{
+            pref.edit {
+                putBoolean(
+                    "connected", false
+                )
+            }
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
-        else {
-            recyclerView.setVisibility(View.VISIBLE);
-            emtyDoctorMessg.setVisibility(View.GONE);
-        }
-        listapp.setOnClickListener{
+
+     /*   listapp.setOnClickListener{
             val intent = Intent(this, AppoitmentsActivity ::class.java)
+            this.startActivity(intent)
+        }*/
+        listapp.setOnClickListener{
+            val intent = Intent(this, TraitementActivity ::class.java)
             this.startActivity(intent)
         }
     }
 
-    fun loadData() {
+  /*  fun loadData() {
         listDoctors.add(
             Doctor(
                 0,
@@ -52,9 +60,7 @@ class HomeActivity : AppCompatActivity() {
                 " R.drawable.doctor",
                 "0798989898",
                 36.7762F,
-                3.05997F,
-                "www.facebook.com",
-                15
+                3.05997F
             )
         )
         listDoctors.add(
@@ -66,9 +72,7 @@ class HomeActivity : AppCompatActivity() {
                 " R.drawable.doctor",
                 "0798989898",
                 36.7762F,
-                3.05997F,
-                "www.facebook.com",
-                15
+                3.05997F
             )
         )
         listDoctors.add(
@@ -80,9 +84,7 @@ class HomeActivity : AppCompatActivity() {
                 "R.drawable.doctor",
                 "0798989898",
                 36.7762F,
-                3.05997F,
-                "www.facebook.com",
-                15
+                3.05997F
             )
         )
         listDoctors.add(
@@ -94,9 +96,7 @@ class HomeActivity : AppCompatActivity() {
                 " R.drawable.doctor",
                 "0798989898",
                 36.7762F,
-                3.05997F,
-                "www.facebook.com",
-                15
+                3.05997F
             )
         )
         listDoctors.add(
@@ -108,9 +108,7 @@ class HomeActivity : AppCompatActivity() {
                 "R.drawable.doctor",
                 "0798989898",
                 36.7762F,
-                3.05997F,
-                "www.facebook.com",
-                15
+                3.05997F
             )
         )
         listDoctors.add(
@@ -122,9 +120,7 @@ class HomeActivity : AppCompatActivity() {
                 " R.drawable.doctor",
                 "0798777777",
                 36.7762F,
-                3.05997F,
-                "www.facebook.com",
-                15
+                3.05997F
             )
         )
         listDoctors.add(
@@ -136,10 +132,8 @@ class HomeActivity : AppCompatActivity() {
                 " R.drawable.doctor",
                 "0798989898",
                 36.7762F,
-                3.05997F,
-                "www.facebook.com",
-                15
+                3.05997F
             )
         )
-    }
+    }*/
 }

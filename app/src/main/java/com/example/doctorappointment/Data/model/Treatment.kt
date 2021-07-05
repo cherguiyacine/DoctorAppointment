@@ -5,12 +5,13 @@ import androidx.room.PrimaryKey
 import java.io.Serializable
 import java.util.*
 
-@Entity(tableName = "Reservation")
-data class Reservation(
+@Entity(tableName = "Treatment")
+data class Treatment(
         @PrimaryKey
-        var patient :Patient,
-        var doctor: Doctor,
-        var date: Date
+        var idTreatment: Int,
+        var begin_date: String,
+        var end_date: String,
+        var description :String
 ) : Serializable
 
 

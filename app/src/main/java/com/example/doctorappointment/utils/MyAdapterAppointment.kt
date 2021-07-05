@@ -13,12 +13,13 @@ import androidmads.library.qrgenearator.QRGContents
 import androidmads.library.qrgenearator.QRGEncoder
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctorappointment.Data.model.Reservation
+import com.example.doctorappointment.Data.model.resquest.ReservationPatientRequest
 import com.example.doctorappointment.R
 import com.google.zxing.WriterException
 import de.hdodenhof.circleimageview.CircleImageView
 
 
-class MyAdapterAppointment(val context: Context, var data: List<Reservation>) :
+class MyAdapterAppointment(val context: Context, var data: List<ReservationPatientRequest>) :
     RecyclerView.Adapter<MyViewHolderAppointment>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolderAppointment {
         return MyViewHolderAppointment(
@@ -29,8 +30,8 @@ class MyAdapterAppointment(val context: Context, var data: List<Reservation>) :
 
     override fun onBindViewHolder(holder: MyViewHolderAppointment, position: Int) {
         holder.nameDoctorReservation.text = data[position].doctor.nom +" "+ data[position].doctor.prenom
-        //   holder.prenomDoctor.text = listDoctors[position].prenom
-        holder.numberPhoneDoctorTextReservation.text = listDoctors[position].numTlp
+        //   holder.prenomDoctor.text = data[position].prenom
+        holder.numberPhoneDoctorTextReservation.text = data[position].doctor.numTlp
         holder.specialiteDoctorReservation.text = data[position].doctor.specialite
         // Glide.with(context).load(BASE_URL+data[position].imgUrl).into(holder.photoDoctor)
         holder.photoDoctorReservation.setImageResource(R.drawable.doctor)
@@ -50,7 +51,7 @@ class MyAdapterAppointment(val context: Context, var data: List<Reservation>) :
         }
         var qrgEncoder =
             QRGEncoder(
-                data[position].doctor.nom + data[position].ReservationID + data[position].date,
+                data[position].doctor.nom +  data[position].booking.dateBooking,
                 null,
                 QRGContents.Type.TEXT,
                 400
