@@ -8,7 +8,7 @@ object RoomService {
     val appDatabase: AppDatabase by lazy {
         Room.databaseBuilder(
             context, AppDatabase::class.java,
-            "dbtps"
+            "dbtpsssspp"
         )
             .allowMainThreadQueries().build()
     }

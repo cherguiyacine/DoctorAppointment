@@ -51,7 +51,7 @@ class MyAdapterAppointment(val context: Context, var data: List<ReservationPatie
         }
         var qrgEncoder =
             QRGEncoder(
-                data[position].doctor.nom +  data[position].booking.dateBooking,
+                data[position].doctor.nom + "_"+ data[position].booking.dateBooking +"_"+data[position].booking.heureBooking ,
                 null,
                 QRGContents.Type.TEXT,
                 400

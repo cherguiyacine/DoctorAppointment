@@ -2,15 +2,20 @@ package com.example.tp3exercice1_chergui_kadri.service
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.widget.Toast
 import androidx.work.ListenableWorker
 import androidx.work.WorkerParameters
 import androidx.work.impl.utils.futures.SettableFuture
+import com.example.doctorappointment.Data.model.Conseil
+import com.example.doctorappointment.Data.model.Patient
+import com.example.doctorappointment.Data.model.resquest.ConseilBody
+import com.example.doctorappointment.Data.repositories.PatientRepo
 import com.example.doctorappointment.Data.room.RoomService
 import com.google.common.util.concurrent.ListenableFuture
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-/*
+
 @SuppressLint("RestrictedApi")
 class SyncService(val ctx: Context, val workParamters: WorkerParameters):
     ListenableWorker(ctx, workParamters){
@@ -22,16 +27,12 @@ class SyncService(val ctx: Context, val workParamters: WorkerParameters):
     override fun startWork(): ListenableFuture<Result> {
         future = SettableFuture.create()
         val conseils = RoomService.appDatabase.getConseilDao().getUnSynchronizedConseils()
-        addConseils(conseils)
+        addConseils( conseils)
         return future
     }
 
-
-
-
-
     fun addConseils(conseils:List<Conseil>) {
-        val result = DoctorRepo.api.sendConseils(conseils) // consommation de l'api
+        val result = PatientRepo.api.sendConseils(conseils) // consommation de l'api
         result.enqueue(object: Callback<String> {
 
             override fun onFailure(call: Call<String>?, t: Throwable?) {
@@ -61,4 +62,4 @@ class SyncService(val ctx: Context, val workParamters: WorkerParameters):
     }
 
 
-}*/
+}

@@ -21,6 +21,9 @@ interface DoctorDao {
     @Query("select * from Doctor")
     fun getAllDoctor():List<Doctor>
 
+    @Query("select * from Doctor where doctorID =:id ")
+    fun getDoctor(id:Int):Doctor
+
     @Query("DELETE FROM Doctor")
     fun deleteAllDoctor()
 }

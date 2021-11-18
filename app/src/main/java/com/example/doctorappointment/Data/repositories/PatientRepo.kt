@@ -7,9 +7,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.work.ListenableWorker
 import com.example.doctorappointment.Data.api.ServiceBuilder
 import com.example.doctorappointment.Data.api.ServiceProvider
+import com.example.doctorappointment.Data.model.Doctor
+import com.example.doctorappointment.Data.model.Treatment
 import com.example.doctorappointment.Data.model.resquest.*
+import com.example.doctorappointment.Data.room.RoomService
 import com.example.doctorappointment.utils.*
 import kotlinx.android.synthetic.main.activity_appoitments.*
 import kotlinx.android.synthetic.main.fragment_list_reservation.*
@@ -199,10 +203,12 @@ class PatientRepo {
                     } else {
                         val resp = response.body()
                         println(resp)
+                        var listTreatment =mutableListOf<Treatment>()
                         if (resp != null) {
                             listTraitement.clear()
                             for (m in resp!!) {
                                 listTraitement.add(m)
+                                listTreatment.add(m.treatment)
                             }
                             var spacingBetweenItem: SpacingItemDecorator = SpacingItemDecorator(10)
                             recyclerViewTraitement.layoutManager = LinearLayoutManager(context)
@@ -218,6 +224,14 @@ class PatientRepo {
                                 recyclerViewTraitement.setVisibility(View.VISIBLE);
                             }
                         }
+                        Toast.makeText(
+                            context,
+                            "hey",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        RoomService.context=context
+                        RoomService.appDatabase.TraitementDao().deleteAllTraitements()
+                        RoomService.appDatabase.TraitementDao().addTraitements(listTreatment)
                     }
                 }
 
@@ -227,8 +241,82 @@ class PatientRepo {
                         "Vérifier votre conexion",
                         Toast.LENGTH_SHORT
                     ).show()
+                    RoomService.context=context
+                    var listOfTraitement=  RoomService.appDatabase.TraitementDao().getAllTraitement()
+                    listTraitement.clear()
+                    for (m in listOfTraitement!!) {
+                        var test = TraitementPatientRequest(   Doctor(
+                            0,
+                            "Kadri",
+                            "Said",
+                            "Cardio",
+                            " R.drawable.doctor",
+                            "0798989898",
+                            36.7762F,
+                            3.05997F
+                        ),m
+                        )
+                        listTraitement.add(test)
+                    }
+                    var spacingBetweenItem: SpacingItemDecorator = SpacingItemDecorator(40)
+                    recyclerViewTraitement.layoutManager = LinearLayoutManager(context)
+                    recyclerViewTraitement.addItemDecoration(spacingBetweenItem)
+                    recyclerViewTraitement.adapter = MyAdapterTraitement(
+                        context, listTraitement
+                    )
+                    if(listTraitement.size ==0){
+                        emptyNoTraitement.setVisibility(View.VISIBLE);
+                    }else{
+                        recyclerViewTraitement.setVisibility(View.VISIBLE);
+                    }
+                    progressBarTraitement.visibility=View.GONE
                 }
             })
+            fun sendConseil(
+                context: Context,
+                idDoctor: Int,
+                idPatient: Int,
+                descriptionConseil: String
+
+            ) {
+                var conseilBody = ConseilBody(idPatient, idDoctor, descriptionConseil)
+                val sendConseilRequest = api.sendConseil(conseilBody) // consommation de l'api
+                println(conseilBody)
+                sendConseilRequest.enqueue(object : Callback<basicRequest> {
+                    override fun onResponse(
+                        call: Call<basicRequest>,
+                        response: Response<basicRequest>
+                    ) {
+
+                        if (!response.isSuccessful()) {
+                            Toast.makeText(
+                                context,
+                                "Un erreur cest produit",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            val resp = response.body()
+                            if (resp != null) {
+                                Toast.makeText(
+                                    context,
+                                    "Conseil ajouter avec succée",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+
+                        }
+                    }
+
+                    override fun onFailure(call: Call<basicRequest>, t: Throwable) {
+                        Toast.makeText(
+                            context,
+                            "Un erreur cest produit",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                })
+            }
+
         }
     }
 }

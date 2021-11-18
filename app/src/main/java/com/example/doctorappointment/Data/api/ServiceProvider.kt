@@ -1,5 +1,6 @@
 package com.example.doctorappointment.Data.api
 
+import com.example.doctorappointment.Data.model.Conseil
 import com.example.doctorappointment.Data.model.Doctor
 import com.example.doctorappointment.Data.model.Patient
 import com.example.doctorappointment.Data.model.Reservation
@@ -29,6 +30,9 @@ interface ServiceProvider {
     fun sendConseil(
         @Body info: ConseilBody
     ): Call<basicRequest>
+
+    @POST("addConseils")
+    fun sendConseils(@Body conseils: List<Conseil>):Call<String>
 
     @POST("api/AddBooking")
     fun sendReservation(

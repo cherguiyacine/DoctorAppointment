@@ -103,7 +103,7 @@ class DetailsDoctorActivity : AppCompatActivity() {
                         val patientId = pref.getInt(
                             "patientId", 0
                         )
-                        var res = ReservationBody( patientId,person.doctorID,date)
+                        var res = ReservationBody( patientId,person.doctorID,date,"")
                         var detailsDoctorActivity = PatientRepo.Companion
                         detailsDoctorActivity.sendReservation(context,res)
                       //  listReservation.add(res)

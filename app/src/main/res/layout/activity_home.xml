@@ -177,4 +177,13 @@
         app:layout_constraintStart_toStartOf="@+id/fragment"
         app:layout_constraintTop_toTopOf="@+id/fragment" />
 
+    <Spinner
+        android:id="@+id/sp_option"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/listapp"
+        app:layout_constraintEnd_toEndOf="@+id/listapp"
+        app:layout_constraintStart_toStartOf="@+id/listapp"
+        app:layout_constraintTop_toTopOf="@+id/listapp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

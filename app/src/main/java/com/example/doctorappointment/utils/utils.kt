@@ -13,7 +13,7 @@ import com.example.doctorappointment.Data.model.resquest.TraitementPatientReques
 import com.example.doctorappointment.R
 import java.util.*
 
-const val BASE_URL = "https://8b9c7b533c16.ngrok.io/"
+const val BASE_URL = "https://8e8567807a74.ngrok.io/"
 val listDoctors = mutableListOf<Doctor>()
 val listReservation = mutableListOf<ReservationPatientRequest>()
 val listTraitement = mutableListOf<TraitementPatientRequest>()

@@ -28,34 +28,5 @@ class TraitementActivity : AppCompatActivity() {
         emptyNoTraitement.setVisibility(View.GONE);
 
     }
-    fun loadData() {
-        listTraitement.add(
-            TraitementPatientRequest(
-               Doctor( 0,
-                   "Kadri",
-                   "Said",
-                   "Cardio",
-                   " R.drawable.doctor",
-                   "0798989898",
-                   36.7762F,
-                   3.05997F),
-                Treatment(0,"12/14/2019","12/14/2019","Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku")
-            )
-        )
-        listTraitement.add(
-            TraitementPatientRequest(
-                Doctor( 0,
-                    "Yacine",
-                    "Chergui",
-                    "Cardio",
-                    " R.drawable.doctor",
-                    "0798989898",
-                    36.7762F,
-                    3.05997F),
-                Treatment(0,"12/14/2019","12/14/2019","Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku")
-            )
-        )
 
-
-    }
 }

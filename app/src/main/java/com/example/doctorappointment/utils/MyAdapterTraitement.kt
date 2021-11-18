@@ -33,7 +33,7 @@ class MyAdapterTraitement(val context: Context, var data: List<TraitementPatient
         //   holder.prenomDoctor.text = data[position].prenom
         // Glide.with(context).load(BASE_URL+data[position].imgUrl).into(holder.photoDoctor)
         holder.photoDoctorTraitement.setImageResource(R.drawable.doctor)
-        holder.dateTraitement.text=data[position].treatment.begin_date+" "+data[position].treatment.end_date
+        holder.dateTraitement.text="Date debut :"+data[position].treatment.begin_date.substring(0,10)+"\nDate fin :"+data[position].treatment.end_date.substring(0,10)
         holder.traitementDescription.text=data[position].treatment.description
     }
    /* private fun isTwoPane():Boolean{

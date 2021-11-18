@@ -7,11 +7,12 @@ import java.util.*
 
 @Entity(tableName = "Treatment")
 data class Treatment(
-        @PrimaryKey
-        var idTreatment: Int,
         var begin_date: String,
         var end_date: String,
         var description :String
-) : Serializable
-
+)
+: Serializable {
+        @PrimaryKey(autoGenerate = true)
+        var idTreatment:Int?=null
+}
 

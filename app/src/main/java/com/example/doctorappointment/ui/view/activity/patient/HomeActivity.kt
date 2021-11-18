@@ -4,6 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Adapter
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import com.example.doctorappointment.Data.repositories.DoctorRepo
@@ -16,6 +19,28 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        var options = arrayOf("","liste Rendez-vous","","liste Traitement","")
+        sp_option.adapter =ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,options)
+        sp_option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if(position==1){
+                    goToAppoitments()
+
+                }else{
+                    if(position==3)
+                    goToTraitement()
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
+
         var homePatientActivity = DoctorRepo.Companion
         homePatientActivity.getAllDoctors(this,recyclerView,emtyDoctorMessge,progressBarDoctors)
         val pref = getSharedPreferences(
@@ -44,12 +69,17 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, AppoitmentsActivity ::class.java)
             this.startActivity(intent)
         }*/
-        listapp.setOnClickListener{
-            val intent = Intent(this, TraitementActivity ::class.java)
-            this.startActivity(intent)
-        }
+
     }
 
+    fun goToTraitement(){
+        val intent = Intent(this, TraitementActivity ::class.java)
+        this.startActivity(intent)
+    }
+    fun goToAppoitments(){
+        val intent = Intent(this, AppoitmentsActivity ::class.java)
+        this.startActivity(intent)
+    }
   /*  fun loadData() {
         listDoctors.add(
             Doctor(
